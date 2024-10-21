@@ -1,7 +1,5 @@
 # NextJS + TypeScript + Tailwind CSS
 
----
-
 ### Description:
 **Next.js TypeScript Boilerplate**
 
