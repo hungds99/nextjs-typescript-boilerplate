@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
 
-export default function Page() {
+export default function SignIn() {
   return (
     <div className='flex h-screen w-full items-center justify-center px-4'>
       <Card className='mx-auto w-1/4'>
