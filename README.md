@@ -64,12 +64,10 @@ npm run build
 
 This will create an optimized production build.
 
-## Contributing
-
-Contributions are welcome! If you'd like to contribute, feel free to fork the repository and submit a pull request.
-
-
 #### 6. Deploy the app:
 
 You can deploy the app to [Vercel](https://vercel.com), [Netlify](https://www.netlify.com), or any other platform that supports Next.js. For Vercel, you can simply link your GitHub repository, and it will handle the rest.
 
+## Contributing
+
+Contributions are welcome! If you'd like to contribute, feel free to fork the repository and submit a pull request.
