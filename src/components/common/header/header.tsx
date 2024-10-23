@@ -8,7 +8,6 @@ import {
 } from '@/components/ui/breadcrumb';
 import { Separator } from '@/components/ui/separator';
 import { SidebarTrigger } from '@/components/ui/sidebar';
-import { ThemeToggle } from '../theme-toggle';
 import { UserNav } from '../user-nav';
 
 export const Header = () => {
@@ -30,7 +29,6 @@ export const Header = () => {
         </Breadcrumb>
       </div>
       <div className='flex items-center gap-2 px-4'>
-        <ThemeToggle />
         <UserNav />
       </div>
     </header>

@@ -70,10 +70,16 @@ const data = {
       icon: Bot,
     },
     {
+      title: 'Products',
+      url: '/product',
+      icon: BookOpen,
+    },
+    {
       title: 'Swap Requests',
       url: '#',
       icon: BookOpen,
     },
+
     {
       title: 'Settings',
       url: '#',

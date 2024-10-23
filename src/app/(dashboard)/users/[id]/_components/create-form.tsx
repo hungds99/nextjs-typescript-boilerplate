@@ -59,7 +59,7 @@ export default function UserForm() {
   return (
     <Card className='mx-auto w-full'>
       <CardHeader>
-        <CardTitle className='text-left text-2xl font-bold'>Employee Information</CardTitle>
+        <CardTitle className='text-left text-2xl font-bold'>Users Information</CardTitle>
       </CardHeader>
       <CardContent>
         <Form {...form}>
