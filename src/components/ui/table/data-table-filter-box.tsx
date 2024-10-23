@@ -32,7 +32,7 @@ interface FilterBoxProps {
   setFilterValue: (
     value: string | ((old: string) => string | null) | null,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    options?: Options<any> | undefined,
+    options?: Options | undefined,
   ) => Promise<URLSearchParams>;
   filterValue: string;
 }
