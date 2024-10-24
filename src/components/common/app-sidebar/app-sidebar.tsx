@@ -35,6 +35,8 @@ import {
   ChevronsUpDown,
   CreditCard,
   GalleryVerticalEnd,
+  GitPullRequest,
+  ListTodo,
   LogOut,
   Settings2,
   Sparkles,
@@ -77,9 +79,13 @@ const data = {
     {
       title: 'Swap Requests',
       url: '#',
-      icon: BookOpen,
+      icon: GitPullRequest,
     },
-
+    {
+      title: 'Tasks',
+      url: '/tasks',
+      icon: ListTodo,
+    },
     {
       title: 'Settings',
       url: '#',
