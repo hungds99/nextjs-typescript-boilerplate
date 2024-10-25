@@ -29,6 +29,7 @@ import { format } from 'date-fns';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { updateUserProfile } from '../actions';
+import { FileUploader } from '@/components/common/file-uploader';
 
 const languages = [
   { label: 'English', value: 'en' },
@@ -41,6 +42,9 @@ const languages = [
   { label: 'Korean', value: 'ko' },
   { label: 'Chinese', value: 'zh' },
 ] as const;
+
+const MAX_FILE_SIZE = 5000000;
+const ACCEPTED_IMAGE_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
 
 const accountFormSchema = z.object({
   name: z
@@ -57,6 +61,14 @@ const accountFormSchema = z.object({
   language: z.string({
     required_error: 'Please select a language.',
   }),
+  image: z
+    .any()
+    .refine((files) => files?.length == 1, 'Image is required.')
+    .refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, `Max file size is 5MB.`)
+    .refine(
+      (files) => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type),
+      '.jpg, .jpeg, .png and .webp files are accepted.',
+    ),
 });
 
 type AccountFormValues = z.infer<typeof accountFormSchema>;
@@ -90,6 +102,31 @@ export function AccountForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
+        <FormField
+          control={form.control}
+          name='image'
+          render={({ field }) => (
+            <div className='space-y-6'>
+              <FormItem className='w-full'>
+                <FormLabel>Images</FormLabel>
+                <FormControl>
+                  <FileUploader
+                    value={field.value}
+                    onValueChange={field.onChange}
+                    maxFiles={4}
+                    maxSize={4 * 1024 * 1024}
+                    // disabled={loading}
+                    // progresses={progresses}
+                    // pass the onUpload function here for direct upload
+                    // onUpload={uploadFiles}
+                    // disabled={isUploading}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            </div>
+          )}
+        />
         <FormField
           control={form.control}
           name='name'

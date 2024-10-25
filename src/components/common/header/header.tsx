@@ -9,6 +9,7 @@ import {
 import { Separator } from '@/components/ui/separator';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { UserNav } from '../user-nav';
+import { Breadcrumbs } from '../breadcrumbs';
 
 export const Header = () => {
   return (
@@ -16,17 +17,7 @@ export const Header = () => {
       <div className='flex items-center gap-2'>
         <SidebarTrigger className='-ml-1' />
         <Separator orientation='vertical' className='mr-2 h-4' />
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem className='hidden md:block'>
-              <BreadcrumbLink href='#'>Building Your Application</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator className='hidden md:block' />
-            <BreadcrumbItem>
-              <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        <Breadcrumbs />
       </div>
       <div className='flex items-center gap-2 px-4'>
         <UserNav />

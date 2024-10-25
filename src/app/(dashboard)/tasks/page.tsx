@@ -1,3 +1,4 @@
+import { AppContainer } from '@/components/common/app-container';
 import { Metadata } from 'next';
 import { z } from 'zod';
 import { columns } from './components/columns';
@@ -26,18 +27,14 @@ export default async function TaskPage() {
   const tasks = await getTasks();
 
   return (
-    <>
-      <div className='hidden h-full flex-1 flex-col space-y-8 p-8 md:flex'>
-        <div className='flex items-center justify-between space-y-2'>
-          <div>
-            <h2 className='text-2xl font-bold tracking-tight'>Welcome back!</h2>
-            <p className='text-muted-foreground'>
-              Here&apos;s a list of your tasks for this month!
-            </p>
-          </div>
+    <AppContainer>
+      <div className='flex items-center justify-between space-y-2'>
+        <div>
+          <h2 className='text-2xl font-bold tracking-tight'>Welcome back!</h2>
+          <p className='text-muted-foreground'>Here&apos;s a list of your tasks for this month!</p>
         </div>
-        <DataTable data={tasks} columns={columns} />
       </div>
-    </>
+      <DataTable data={tasks} columns={columns} />
+    </AppContainer>
   );
 }

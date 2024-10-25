@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: 'api.slingacademy.com',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+      },
     ],
   },
 };

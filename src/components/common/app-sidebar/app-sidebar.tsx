@@ -29,7 +29,6 @@ import {
 import {
   BadgeCheck,
   Bell,
-  BookOpen,
   Bot,
   ChevronRight,
   ChevronsUpDown,
@@ -66,19 +65,15 @@ const data = {
       icon: SquareTerminal,
       isActive: true,
     },
+
     {
       title: 'Users',
       url: '/users',
       icon: Bot,
     },
     {
-      title: 'Products',
-      url: '/product',
-      icon: BookOpen,
-    },
-    {
-      title: 'Swap Requests',
-      url: '#',
+      title: 'Companies',
+      url: '/companies',
       icon: GitPullRequest,
     },
     {
